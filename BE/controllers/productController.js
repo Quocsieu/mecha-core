@@ -2,7 +2,13 @@ import Product from "../models/productModel.js";
 
 export const getProducts = async (req, res, next) => {
   try {
+    console.log("DB NAME:", Product.db.name);
+    console.log("COLLECTION:", Product.collection.name);
+
     const products = await Product.find();
+
+    console.log("PRODUCT COUNT:", products.length);
+
     res.json(products);
   } catch (error) {
     next(error);
