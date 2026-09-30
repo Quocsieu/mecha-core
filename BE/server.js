@@ -14,6 +14,7 @@ import logger from "./middlewares/logger.js";
 import errorHandler from "./middlewares/errorhandling.js";
 
 const app = express();
+console.log("SERVER CODE dd0c84a");
 const PORT = 3000;
 
 app.use(cors());
