@@ -2,6 +2,7 @@ import Product from "../models/productModel.js";
 
 export const getProducts = async (req, res, next) => {
   try {
+    console.log("========== GET PRODUCTS ==========");
     console.log("DB NAME:", Product.db.name);
     console.log("COLLECTION:", Product.collection.name);
 
@@ -11,6 +12,7 @@ export const getProducts = async (req, res, next) => {
 
     res.json(products);
   } catch (error) {
+    console.error("GET PRODUCTS ERROR:", error);
     next(error);
   }
 };
